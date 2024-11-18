@@ -1,10 +1,20 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import router from './routes';
+import dotenv from "dotenv";
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 
+dotenv.config(); 
 const app = express();
-const port = 3000;
+app.use(bodyParser.json());
+app.use(cookieParser());
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, TypeScript with Express!');
+const port = process.env.PORT?? 3000;
+
+app.use(router);
+
+app.get("/", (req, res) => {
+  res.send("Blog API is running!");
 });
 
 app.listen(port, () => {
