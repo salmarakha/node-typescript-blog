@@ -1,6 +1,4 @@
-# Prisma Postgres Example: 
-
-This project contains a sample application demonstrating various capabilities and workflows of [Prisma Postgres](https://prisma.io/data-platform/postgres):
+# NodeJs, TypeScript and Prisma Postgres demo: 
 
 ### 1. Set up a Prisma Postgres database in Prisma Data Platform
 
@@ -51,5 +49,11 @@ Once the script has completed, you can inspect the logs in your terminal or use 
 
 ```
 npx prisma studio
+```
+
+### 5. Run project 
+
+```
+npm run dev
 ```
 
