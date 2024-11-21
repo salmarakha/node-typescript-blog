@@ -10,11 +10,7 @@ async function main() {
 
   // Learn more about caching strategies:
   // https://www.prisma.io/docs/accelerate/caching
-  const cachedUsersWithPosts = await prisma.user.findMany({
-    where: {
-      email: { contains: "alice" }
-    },
-    include: { posts: true },
+  const cachedUsersWithPosts = await prisma.post.findMany({
     cacheStrategy: {
       swr: 30, // 30 seconds
       ttl: 60  // 60 seconds

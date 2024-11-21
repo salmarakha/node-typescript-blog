@@ -14,6 +14,7 @@ model User {
   name    String?
   posts   Post[]
   comments   Comment[]
+  tags   Tag[]
   categories   Category[]
 }
 
@@ -52,6 +53,8 @@ model Comment {
 model Tag {
   id    Int    @id @default(autoincrement())
   name  String
+  userId  Int
+  user    User   @relation(fields: [userId], references: [id])
   posts PostsTags[]
 }
 
